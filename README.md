@@ -7,12 +7,11 @@ A full-stack application that generates AI-powered quizzes on any topic using Op
 ### 🧠 Guests Screen View
 ![Guest Screen View Screenshot](./public/screenshots/guest-quiz-screen.png)
 
-### ❓ Quiz Question View
-![Quiz Screen Screenshot](./public/screenshots/quiz-screen.png)
-
 ### 🧠 Dashboard View
 ![Dashboard Screenshot](./public/screenshots/quiz-dashboard.png)
 
+### ❓ Quiz Question View
+![Quiz Screen Screenshot](./public/screenshots/quiz-screen.png)
 
 ## Features
 
