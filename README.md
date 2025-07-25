@@ -43,28 +43,28 @@ A full-stack application that generates AI-powered quizzes on any topic using Op
 
 Create a `.env` file in the root directory:
 
-\`\`\`env
+```bash
 # MongoDB connection string
 MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/quiz_app?retryWrites=true&w=majority
 
 # OpenAI API Key for AI-generated quizzes
 OPENAI_API_KEY=sk-your-openai-api-key-here
-\`\`\`
+```
 
 ## Setup Instructions
 
 ### 1. Clone the Repository
 
-\`\`\`bash
-git clone https://github.com/yourusername/topic-quiz-creator.git
+```bash
+git clone <your-repo-url>
 cd topic-quiz-creator
-\`\`\`
+```
 
 ### 2. Install Dependencies
 
-\`\`\`bash
+```bash
 pnpm install
-\`\`\`
+```
 
 ### 3. Set Up MongoDB
 
@@ -75,7 +75,7 @@ pnpm install
 4. Add it to your `.env` file
 
 #### Option B: Local MongoDB
-\`\`\`bash
+```bash
 # Install MongoDB locally
 brew install mongodb/brew/mongodb-community  # macOS
 # or follow instructions for your OS
@@ -85,7 +85,7 @@ brew services start mongodb/brew/mongodb-community
 
 # Use local connection string
 MONGODB_URI=mongodb://localhost:27017/quiz_app
-\`\`\`
+```
 
 ### 4. Get OpenAI API Key
 
@@ -95,21 +95,21 @@ MONGODB_URI=mongodb://localhost:27017/quiz_app
 
 ### 5. Run the Application
 
-\`\`\`bash
+```bash
 pnpm dev
-\`\`\`
+```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## API Endpoints
 
 ### Generate Quiz
-\`\`\`
+```
 GET /api/generate?topic=<topic>
-\`\`\`
+```
 
 **Response:**
-\`\`\`json
+```json
 {
   "quizId": "abc123",
   "questions": [
@@ -121,25 +121,25 @@ GET /api/generate?topic=<topic>
   ],
   "generatedBy": "AI"
 }
-\`\`\`
+```
 
 ### Grade Quiz
-\`\`\`
+```
 POST /api/grade?quizId=<quizId>
-\`\`\`
+```
 
 **Body:**
-\`\`\`json
+```json
 {
   "answers": {
     "1": "A JavaScript library",
     "2": "Virtual DOM"
   }
 }
-\`\`\`
+```
 
 **Response:**
-\`\`\`json
+```Json
 {
   "correct": 2,
   "total": 5,
@@ -151,12 +151,12 @@ POST /api/grade?quizId=<quizId>
     }
   ]
 }
-\`\`\`
+```
 
 ## Database Schema
 
 ### Quizzes Collection
-\`\`\`javascript
+```javascript
 {
   _id: ObjectId,
   quizId: String,
@@ -174,10 +174,10 @@ POST /api/grade?quizId=<quizId>
   },
   createdAt: Date
 }
-\`\`\`
+```
 
 ### Quiz Results Collection
-\`\`\`javascript
+```javascript
 {
   _id: ObjectId,
   quizId: String,
@@ -188,7 +188,7 @@ POST /api/grade?quizId=<quizId>
   score: Number,
   completedAt: Date
 }
-\`\`\`
+```
 
 ## Deployment
 
